@@ -14,5 +14,15 @@ FROM honzahommer/pcengines-apu-debian-cd
 Debian installer CD image file will be builded into `$PWD/images` directory.
 
 ```
-docker run --rm -v $PWD/images:/opt/pcengines/images honzahommer/pcengines-apu-debian-cd [apu64]
+docker run --rm -v $PWD/images:/opt/pcengines/images honzahommer/pcengines-apu-debian-cd [profile]
+```
+
+#### Clone repository and build custom image
+
+```
+git clone https://github.com/honzahommer/docker-pcengines-apu-debian-cd.git
+cd docker-pcengines-apu-debian-cd
+...
+docker build --tag pcengines-apu-debian-cd .
+docker run --rm -v $PWD/images:/opt/pcengines/images pcengines-apu-debian-cd [profile]
 ```
